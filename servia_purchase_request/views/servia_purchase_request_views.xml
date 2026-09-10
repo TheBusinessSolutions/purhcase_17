@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="servia_purchase_request_view_form" model="ir.ui.view">
+        <field name="name">servia.purchase.request.form</field>
+        <field name="model">servia.purchase.request</field>
+        <field name="arch" type="xml">
+            <form string="Purchase Requests">
+                <header>
+                    <button name="action_confirm" string="Approve" type="object"
+                            class="btn-primary" invisible="state != 'draft'"/>
+                    <button name="action_reset" string="Reset" type="object"
+                            invisible="state != 'confirmed'"/>
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1><field name="name" placeholder="Item Requested"/></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="department"/>
+                            <field name="quantity"/>
+                            <field name="uom"/>
+                            <field name="needed_by"/>
+                        </group>
+                        <group>
+                            <field name="est_cost"/>
+                            <field name="requester"/>
+                            <field name="approver"/>
+                            <field name="priority"/>
+                        </group>
+                    </group>
+                    <field name="note" placeholder="Justification..."/>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="servia_purchase_request_view_list" model="ir.ui.view">
+        <field name="name">servia.purchase.request.list</field>
+        <field name="model">servia.purchase.request</field>
+        <field name="arch" type="xml">
+            <tree string="Purchase Requests" decoration-success="state=='confirmed'" decoration-muted="state=='draft'">
+                <field name="needed_by"/>
+                <field name="name"/>
+                <field name="department"/>
+                <field name="quantity"/>
+                <field name="est_cost"/>
+                <field name="priority"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="servia_purchase_request_view_search" model="ir.ui.view">
+        <field name="name">servia.purchase.request.search</field>
+        <field name="model">servia.purchase.request</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="department"/>
+                <field name="requester"/>
+                <filter name="f_priority_low" string="Low" domain="[('priority','=','low')]"/>
+                <filter name="f_priority_normal" string="Normal" domain="[('priority','=','normal')]"/>
+                <filter name="f_priority_high" string="High" domain="[('priority','=','high')]"/>
+                <filter name="draft" string="Draft" domain="[('state','=','draft')]"/>
+                <filter name="confirmed" string="Approved" domain="[('state','=','confirmed')]"/>
+                <group expand="0" string="Group By">
+                    <filter name="g_department" string="Department" context="{'group_by':'department'}"/>
+                    <filter name="g_priority" string="Priority" context="{'group_by':'priority'}"/>
+                    <filter name="g_state" string="Status" context="{'group_by':'state'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="servia_purchase_request_action" model="ir.actions.act_window">
+        <field name="name">Purchase Requests</field>
+        <field name="res_model">servia.purchase.request</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Record your first entry</p>
+            <p>A simple purchase requisition &amp; approval register.<br/>
+               Need dashboards, PDF exports, approval flows or automation?
+               <b>Servia Pro</b> and full A-Z installation are available - email <b>support@servia.ae</b>.</p>
+        </field>
+    </record>
+
+    <record id="servia_purchase_request_more_apps_action" model="ir.actions.act_url">
+        <field name="name">Servia Pro &amp; More Apps</field>
+        <field name="url">https://apps.odoo.com/apps/modules/browse?author=Servia</field>
+        <field name="target">new</field>
+    </record>
+
+    <record id="servia_purchase_request_setup_action" model="ir.actions.act_url">
+        <field name="name">Get Free Setup &amp; Support</field>
+        <field name="url">mailto:support@servia.ae?subject=Servia%20Setup%20/%20Quote%20Request%20-%20Servia%20Purchase%20Requisition&amp;body=Hello%20Servia%20team%2C%0D%0A%0D%0AI%20am%20using%20your%20Servia%20Purchase%20Requisition%20app%20and%20would%20like%20help.%0D%0A%0D%0AName%3A%0D%0ACompany%3A%0D%0AEmail%3A%0D%0APhone%3A%0D%0AWhat%20I%20need%20%28install%20/%20white-label%20/%20custom%20feature%20/%20support%29%3A%0D%0A%0D%0AThank%20you.</field>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem id="servia_purchase_request_menu_root" name="Purchase Requests"
+              web_icon="servia_purchase_request,static/description/icon.png"/>
+    <menuitem id="servia_purchase_request_menu_main" name="Purchase Requests"
+              parent="servia_purchase_request_menu_root" action="servia_purchase_request_action" sequence="10"/>
+    <menuitem id="servia_purchase_request_menu_setup" name="&#9889; Get Free Setup &amp; Support"
+              parent="servia_purchase_request_menu_root" action="servia_purchase_request_setup_action" sequence="80"/>
+    <menuitem id="servia_purchase_request_menu_more" name="&#9733; Servia Pro &amp; More Apps"
+              parent="servia_purchase_request_menu_root" action="servia_purchase_request_more_apps_action" sequence="90"/>
+
+</odoo>
