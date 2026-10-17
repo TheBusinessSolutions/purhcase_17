@@ -1,0 +1,797 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* inom_material_purchase_requisition
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-17 08:58+0000\n"
+"PO-Revision-Date: 2026-10-17 08:58+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#. module: inom_material_purchase_requisition
+#: model_terms:ir.ui.view,arch_db:inom_material_purchase_requisition.report_material_requisition_document
+msgid ""
+"<br/>\n"
+"                                <strong>Deadline:</strong>"
+msgstr ""
+"<br/>\n"
+"                                <strong>الموعد النهائي:</strong>"
+
+#. module: inom_material_purchase_requisition
+#: model_terms:ir.ui.view,arch_db:inom_material_purchase_requisition.report_material_requisition_document
+msgid ""
+"<br/>\n"
+"                                <strong>Department:</strong>"
+msgstr ""
+"<br/>\n"
+"                                <strong>القسم:</strong>"
+
+#. module: inom_material_purchase_requisition
+#: model_terms:ir.ui.view,arch_db:inom_material_purchase_requisition.report_material_requisition_document
+msgid ""
+"<br/>\n"
+"                                <strong>Requisition Responsible:</strong>"
+msgstr ""
+"<br/>\n"
+"                                <strong>مسؤول الطلب:</strong>"
+
+#. module: inom_material_purchase_requisition
+#: model_terms:ir.ui.view,arch_db:inom_material_purchase_requisition.report_material_requisition_document
+msgid ""
+"<br/>\n"
+"                                <strong>Status:</strong>"
+msgstr ""
+"<br/>\n"
+"                                <strong>الحالة:</strong>"
+
+#. module: inom_material_purchase_requisition
+#: model:mail.template,body_html:inom_material_purchase_requisition.mail_template_manager_approval
+msgid ""
+"<div style=\"margin:0px;padding:0px;font-size:13px;\">\n"
+"                <p>Hello,</p>\n"
+"                <p>\n"
+"                    A new material requisition\n"
+"                    <strong t-out=\"object.name or ''\">MR/0001</strong>\n"
+"                    submitted by\n"
+"                    <t t-out=\"object.employee_id.name or ''\">Employee</t>\n"
+"                    is waiting for your department approval.\n"
+"                </p>\n"
+"                <p>\n"
+"                    Department:\n"
+"                    <t t-out=\"object.department_id.name or ''\">Department</t><br>\n"
+"                    Requisition Date:\n"
+"                    <t t-out=\"object.request_date or ''\">Date</t>\n"
+"                </p>\n"
+"                <p>Please review and approve it in the system.</p>\n"
+"            </div>\n"
+"        "
+msgstr ""
+"<div style=\"margin:0px;padding:0px;font-size:13px;\">\n"
+"                <p>مرحباً،</p>\n"
+"                <p>\n"
+"                    يوجد طلب مواد جديد\n"
+"                    <strong t-out=\"object.name or ''\">MR/0001</strong>\n"
+"                    مقدم من\n"
+"                    <t t-out=\"object.employee_id.name or ''\">الموظف</t>\n"
+"                    وينتظر موافقة القسم.\n"
+"                </p>\n"
+"                <p>\n"
+"                    القسم:\n"
+"                    <t t-out=\"object.department_id.name or ''\">القسم</t><br>\n"
+"                    تاريخ الطلب:\n"
+"                    <t t-out=\"object.request_date or ''\">التاريخ</t>\n"
+"                </p>\n"
+"                <p>يرجى المراجعة والموافقة من خلال النظام.</p>\n"
+"            </div>\n"
+"        "
+
+#. module: inom_material_purchase_requisition
+#: model:mail.template,body_html:inom_material_purchase_requisition.mail_template_user_approval
+msgid ""
+"<div style=\"margin:0px;padding:0px;font-size:13px;\">\n"
+"                <p>Hello,</p>\n"
+"                <p>\n"
+"                    Material requisition\n"
+"                    <strong t-out=\"object.name or ''\">MR/0001</strong>\n"
+"                    has been approved by the department manager and is now\n"
+"                    waiting for your final approval.\n"
+"                </p>\n"
+"                <p>\n"
+"                    Employee:\n"
+"                    <t t-out=\"object.employee_id.name or ''\">Employee</t><br>\n"
+"                    Department:\n"
+"                    <t t-out=\"object.department_id.name or ''\">Department</t>\n"
+"                </p>\n"
+"                <p>Please review and approve it in the system.</p>\n"
+"            </div>\n"
+"        "
+msgstr ""
+"<div style=\"margin:0px;padding:0px;font-size:13px;\">\n"
+"                <p>مرحباً،</p>\n"
+"                <p>\n"
+"                    تم اعتماد طلب المواد\n"
+"                    <strong t-out=\"object.name or ''\">MR/0001</strong>\n"
+"                    من قبل مدير القسم، وهو الآن\n"
+"                    ينتظر موافقتك النهائية.\n"
+"                </p>\n"
+"                <p>\n"
+"                    الموظف:\n"
+"                    <t t-out=\"object.employee_id.name or ''\">الموظف</t><br>\n"
+"                    القسم:\n"
+"                    <t t-out=\"object.department_id.name or ''\">القسم</t>\n"
+"                </p>\n"
+"                <p>يرجى المراجعة والموافقة من خلال النظام.</p>\n"
+"            </div>\n"
+"        "
+
+#. module: inom_material_purchase_requisition
+#: model_terms:ir.ui.view,arch_db:inom_material_purchase_requisition.report_material_requisition_document
+msgid "<strong>Employee:</strong>"
+msgstr "<strong>الموظف:</strong>"
+
+#. module: inom_material_purchase_requisition
+#: model_terms:ir.ui.view,arch_db:inom_material_purchase_requisition.report_material_requisition_document
+msgid "<strong>Requisition Date:</strong>"
+msgstr "<strong>تاريخ الطلب:</strong>"
+
+#. module: inom_material_purchase_requisition
+#: model:ir.module.category,description:inom_material_purchase_requisition.module_category_material_purchase_requisition
+msgid "Access rights for the Material Purchase Requisition module."
+msgstr "صلاحيات الوصول لوحدة طلبات شراء المواد."
+
+#. module: inom_material_purchase_requisition
+#: model_terms:ir.ui.view,arch_db:inom_material_purchase_requisition.report_material_requisition_document
+msgid "Action"
+msgstr "الإجراء"
+
+#. module: inom_material_purchase_requisition
+#: model:ir.model.fields,field_description:inom_material_purchase_requisition.field_material_requisition__message_needaction
+msgid "Action Needed"
+msgstr "إجراء مطلوب"
+
+#. module: inom_material_purchase_requisition
+#: model:ir.model.fields,field_description:inom_material_purchase_requisition.field_material_requisition__activity_ids
+msgid "Activities"
+msgstr "الأنشطة"
+
+#. module: inom_material_purchase_requisition
+#: model:ir.model.fields,field_description:inom_material_purchase_requisition.field_material_requisition__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "زخرفة استثناء النشاط"
+
+#. module: inom_material_purchase_requisition
+#: model:ir.model.fields,field_description:inom_material_purchase_requisition.field_material_requisition__activity_state
+msgid "Activity State"
+msgstr "حالة النشاط"
+
+#. module: inom_material_purchase_requisition
+#: model:ir.model.fields,field_description:inom_material_purchase_requisition.field_material_requisition__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "أيقونة نوع النشاط"
+
+#. module: inom_material_purchase_requisition
+#: model:ir.model.fields,field_description:inom_material_purchase_requisition.field_material_requisition__analytic_account_id
+msgid "Analytic Account"
+msgstr "الحساب التحليلي"
+
+#. module: inom_material_purchase_requisition
+#: model:mail.template,subject:inom_material_purchase_requisition.mail_template_manager_approval
+#: model:mail.template,subject:inom_material_purchase_requisition.mail_template_user_approval
+msgid "Approval Needed: {{ object.name }}"
+msgstr "موافقة مطلوبة: {{ object.name }}"
+
+#. module: inom_material_purchase_requisition
+#: model:ir.model.fields.selection,name:inom_material_purchase_requisition.selection__material_requisition__state__user_approved
+#: model_terms:ir.ui.view,arch_db:inom_material_purchase_requisition.view_material_requisition_search
+msgid "Approved"
+msgstr "معتمد"
+
+#. module: inom_material_purchase_requisition
+#: model:ir.model.fields,field_description:inom_material_purchase_requisition.field_material_requisition__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: inom_material_purchase_requisition
+#: model_terms:ir.ui.view,arch_db:inom_material_purchase_requisition.view_material_requisition_reject_wizard
+msgid "Cancel"
+msgstr "إلغاء"
+
+#. module: inom_material_purchase_requisition
+#: model:ir.model.fields,field_description:inom_material_purchase_requisition.field_material_requisition__company_id
+msgid "Company"
+msgstr "الشركة"
+
+#. module: inom_material_purchase_requisition
+#: model_terms:ir.actions.act_window,help:inom_material_purchase_requisition.action_material_requisition
+msgid "Create your first Material Requisition!"
+msgstr "أنشئ أول طلب مواد لك!"
+
+#. module: inom_material_purchase_requisition
+#: model:ir.model.fields,field_description:inom_material_purchase_requisition.field_material_requisition__create_uid
+#: model:ir.model.fields,field_description:inom_material_purchase_requisition.field_material_requisition_line__create_uid
+#: model:ir.model.fields,field_description:inom_material_purchase_requisition.field_material_requisition_reject_wizard__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: inom_material_purchase_requisition
+#: model:ir.model.fields,field_description:inom_material_purchase_requisition.field_material_requisition__create_date
+#: model:ir.model.fields,field_description:inom_material_purchase_requisition.field_material_requisition_line__create_date
+#: model:ir.model.fields,field_description:inom_material_purchase_requisition.field_material_requisition_reject_wizard__create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: inom_material_purchase_requisition
+#: model:ir.model.fields,help:inom_material_purchase_requisition.field_hr_department__requisition_stock_location_id
+msgid ""
+"Default destination location for material requisitions of this department."
+msgstr "موقع الوجهة الافتراضي لطلبات مواد هذا القسم."
+
+#. module: inom_material_purchase_requisition
+#: model:ir.model.fields,help:inom_material_purchase_requisition.field_hr_employee__requisition_stock_location_id
+msgid ""
+"Default destination location for material requisitions submitted by this "
+"employee."
+msgstr "موقع الوجهة الافتراضي لطلبات المواد المقدمة من هذا الموظف."
+
+#. module: inom_material_purchase_requisition
+#: model:ir.model,name:inom_material_purchase_requisition.model_hr_department
+#: model:ir.model.fields,field_description:inom_material_purchase_requisition.field_material_requisition__department_id
+#: model_terms:ir.ui.view,arch_db:inom_material_purchase_requisition.view_material_requisition_search
+msgid "Department"
+msgstr "القسم"
+
+#. module: inom_material_purchase_requisition
+#: model_terms:ir.ui.view,arch_db:inom_material_purchase_requisition.view_material_requisition_form
+msgid "Department Approve"
+msgstr "موافقة القسم"
+
+#. module: inom_material_purchase_requisition
+#: model:ir.model.fields,field_description:inom_material_purchase_requisition.field_material_requisition_line__description
+#: model_terms:ir.ui.view,arch_db:inom_material_purchase_requisition.report_material_requisition_document
+msgid "Description"
+msgstr "الوصف"
+
+#. module: inom_material_purchase_requisition
+#: model_terms:ir.ui.view,arch_db:inom_material_purchase_requisition.view_material_requisition_form
+msgid "Destination"
+msgstr "الوجهة"
+
+#. module: inom_material_purchase_requisition
+#: model:ir.model.fields,field_description:inom_material_purchase_requisition.field_hr_department__requisition_stock_location_id
+#: model:ir.model.fields,field_description:inom_material_purchase_requisition.field_hr_employee__requisition_stock_location_id
+#: model:ir.model.fields,field_description:inom_material_purchase_requisition.field_material_requisition__dest_location_id
+msgid "Destination Location"
+msgstr "موقع الوجهة"
+
+#. module: inom_material_purchase_requisition
+#: model:ir.model.fields,field_description:inom_material_purchase_requisition.field_material_requisition__display_name
+#: model:ir.model.fields,field_description:inom_material_purchase_requisition.field_material_requisition_line__display_name
+#: model:ir.model.fields,field_description:inom_material_purchase_requisition.field_material_requisition_reject_wizard__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: inom_material_purchase_requisition
+#: model:ir.model,name:inom_material_purchase_requisition.model_hr_employee
+#: model:ir.model.fields,field_description:inom_material_purchase_requisition.field_material_requisition__employee_id
+#: model_terms:ir.ui.view,arch_db:inom_material_purchase_requisition.view_material_requisition_search
+msgid "Employee"
+msgstr "الموظف"
+
+#. module: inom_material_purchase_requisition
+#: model_terms:ir.ui.view,arch_db:inom_material_purchase_requisition.view_material_requisition_form
+msgid "Employee Details"
+msgstr "تفاصيل الموظف"
+
+#. module: inom_material_purchase_requisition
+#: model_terms:ir.actions.act_window,help:inom_material_purchase_requisition.action_material_requisition
+msgid "Employees can request materials or products through this workflow."
+msgstr "يمكن للموظفين طلب المواد أو المنتجات من خلال سير العمل هذا."
+
+#. module: inom_material_purchase_requisition
+#: model_terms:ir.ui.view,arch_db:inom_material_purchase_requisition.view_material_requisition_reject_wizard
+msgid "Enter reason for rejection..."
+msgstr "أدخل سبب الرفض..."
+
+#. module: inom_material_purchase_requisition
+#: model:ir.model.fields,field_description:inom_material_purchase_requisition.field_material_requisition__message_follower_ids
+msgid "Followers"
+msgstr "المتابعون"
+
+#. module: inom_material_purchase_requisition
+#: model:ir.model.fields,field_description:inom_material_purchase_requisition.field_material_requisition__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعون (الشركاء)"
+
+#. module: inom_material_purchase_requisition
+#: model:ir.model.fields,help:inom_material_purchase_requisition.field_material_requisition__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "أيقونة Font Awesome مثل fa-tasks"
+
+#. module: inom_material_purchase_requisition
+#: model:ir.model.fields,field_description:inom_material_purchase_requisition.field_material_requisition__has_message
+msgid "Has Message"
+msgstr "يوجد رسالة"
+
+#. module: inom_material_purchase_requisition
+#: model:ir.model.fields,field_description:inom_material_purchase_requisition.field_material_requisition__id
+#: model:ir.model.fields,field_description:inom_material_purchase_requisition.field_material_requisition_line__id
+#: model:ir.model.fields,field_description:inom_material_purchase_requisition.field_material_requisition_reject_wizard__id
+msgid "ID"
+msgstr "المعرف"
+
+#. module: inom_material_purchase_requisition
+#: model:ir.model.fields,field_description:inom_material_purchase_requisition.field_material_requisition__activity_exception_icon
+msgid "Icon"
+msgstr "أيقونة"
+
+#. module: inom_material_purchase_requisition
+#: model:ir.model.fields,help:inom_material_purchase_requisition.field_material_requisition__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "أيقونة للإشارة إلى نشاط استثنائي."
+
+#. module: inom_material_purchase_requisition
+#: model:ir.model.fields,help:inom_material_purchase_requisition.field_material_requisition__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "إذا تم تحديده، فإن الرسائل الجديدة تتطلب انتباهك."
+
+#. module: inom_material_purchase_requisition
+#: model:ir.model.fields,help:inom_material_purchase_requisition.field_material_requisition__message_has_error
+#: model:ir.model.fields,help:inom_material_purchase_requisition.field_material_requisition__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "إذا تم تحديده، فهناك خطأ في تسليم بعض الرسائل."
+
+#. module: inom_material_purchase_requisition
+#: model:ir.model.fields.selection,name:inom_material_purchase_requisition.selection__material_requisition_line__requisition_action__internal_picking
+#: model_terms:ir.ui.view,arch_db:inom_material_purchase_requisition.view_material_requisition_form
+msgid "Internal Picking"
+msgstr "صرف داخلي"
+
+#. module: inom_material_purchase_requisition
+#: model:ir.model.fields,field_description:inom_material_purchase_requisition.field_material_requisition__picking_ids
+msgid "Internal Pickings"
+msgstr "عمليات الصرف الداخلي"
+
+#. module: inom_material_purchase_requisition
+#: model:ir.model.fields,field_description:inom_material_purchase_requisition.field_material_requisition__message_is_follower
+msgid "Is Follower"
+msgstr "هو متابع"
+
+#. module: inom_material_purchase_requisition
+#: model:ir.model.fields,field_description:inom_material_purchase_requisition.field_material_requisition__write_uid
+#: model:ir.model.fields,field_description:inom_material_purchase_requisition.field_material_requisition_line__write_uid
+#: model:ir.model.fields,field_description:inom_material_purchase_requisition.field_material_requisition_reject_wizard__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: inom_material_purchase_requisition
+#: model:ir.model.fields,field_description:inom_material_purchase_requisition.field_material_requisition__write_date
+#: model:ir.model.fields,field_description:inom_material_purchase_requisition.field_material_requisition_line__write_date
+#: model:ir.model.fields,field_description:inom_material_purchase_requisition.field_material_requisition_reject_wizard__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: inom_material_purchase_requisition
+#: model:ir.model.fields.selection,name:inom_material_purchase_requisition.selection__material_requisition_reject_wizard__reject_type__manager
+msgid "Manager"
+msgstr "المدير"
+
+#. module: inom_material_purchase_requisition
+#: model_terms:ir.ui.view,arch_db:inom_material_purchase_requisition.view_material_requisition_form
+msgid "Manager Approve"
+msgstr "موافقة المدير"
+
+#. module: inom_material_purchase_requisition
+#: model_terms:ir.ui.view,arch_db:inom_material_purchase_requisition.view_material_requisition_form
+msgid "Mark as Received"
+msgstr "تحديد كمستلم"
+
+#. module: inom_material_purchase_requisition
+#: model:ir.model,name:inom_material_purchase_requisition.model_material_requisition
+#: model:ir.module.category,name:inom_material_purchase_requisition.module_category_material_purchase_requisition
+msgid "Material Purchase Requisition"
+msgstr "طلب شراء مواد"
+
+#. module: inom_material_purchase_requisition
+#: model:res.groups,name:inom_material_purchase_requisition.group_material_requisition_manager
+msgid "Material Purchase Requisition Department "
+msgstr "قسم طلبات شراء المواد"
+
+#. module: inom_material_purchase_requisition
+#: model:res.groups,name:inom_material_purchase_requisition.group_material_requisition_employee
+msgid "Material Purchase Requisition Employee"
+msgstr "موظف طلبات شراء المواد"
+
+#. module: inom_material_purchase_requisition
+#: model:ir.model,name:inom_material_purchase_requisition.model_material_requisition_line
+msgid "Material Purchase Requisition Line"
+msgstr "سطر طلب شراء مواد"
+
+#. module: inom_material_purchase_requisition
+#: model:res.groups,name:inom_material_purchase_requisition.group_material_requisition_user
+msgid "Material Purchase Requisition Manager"
+msgstr "مدير طلبات شراء المواد"
+
+#. module: inom_material_purchase_requisition
+#: model:ir.actions.report,name:inom_material_purchase_requisition.action_report_material_requisition
+#: model:ir.model.fields,field_description:inom_material_purchase_requisition.field_purchase_order__material_requisition_id
+#: model:ir.model.fields,field_description:inom_material_purchase_requisition.field_stock_picking__material_requisition_id
+#: model:ir.ui.menu,name:inom_material_purchase_requisition.menu_material_requisition_root
+#: model_terms:ir.ui.view,arch_db:inom_material_purchase_requisition.report_material_requisition_document
+#: model_terms:ir.ui.view,arch_db:inom_material_purchase_requisition.view_material_requisition_form
+msgid "Material Requisition"
+msgstr "طلب مواد"
+
+#. module: inom_material_purchase_requisition
+#: model:mail.template,name:inom_material_purchase_requisition.mail_template_manager_approval
+msgid "Material Requisition: Department Approval Needed"
+msgstr "طلب مواد: موافقة القسم مطلوبة"
+
+#. module: inom_material_purchase_requisition
+#: model:mail.template,name:inom_material_purchase_requisition.mail_template_user_approval
+msgid "Material Requisition: User Approval Needed"
+msgstr "طلب مواد: موافقة المستخدم مطلوبة"
+
+#. module: inom_material_purchase_requisition
+#: model:ir.actions.act_window,name:inom_material_purchase_requisition.action_material_requisition
+#: model_terms:ir.ui.view,arch_db:inom_material_purchase_requisition.view_material_requisition_tree
+msgid "Material Requisitions"
+msgstr "طلبات المواد"
+
+#. module: inom_material_purchase_requisition
+#: model:ir.model.fields,field_description:inom_material_purchase_requisition.field_material_requisition__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ في تسليم الرسالة"
+
+#. module: inom_material_purchase_requisition
+#: model:ir.model.fields,field_description:inom_material_purchase_requisition.field_material_requisition__message_ids
+msgid "Messages"
+msgstr "الرسائل"
+
+#. module: inom_material_purchase_requisition
+#: model:ir.model.fields,field_description:inom_material_purchase_requisition.field_material_requisition__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "الموعد النهائي لنشاطي"
+
+#. module: inom_material_purchase_requisition
+#: model:ir.model.fields.selection,name:inom_material_purchase_requisition.selection__material_requisition__state__draft
+#: model_terms:ir.ui.view,arch_db:inom_material_purchase_requisition.view_material_requisition_search
+msgid "New"
+msgstr "جديد"
+
+#. module: inom_material_purchase_requisition
+#: model:ir.model.fields,field_description:inom_material_purchase_requisition.field_material_requisition__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr "حدث تقويم النشاط التالي"
+
+#. module: inom_material_purchase_requisition
+#: model:ir.model.fields,field_description:inom_material_purchase_requisition.field_material_requisition__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "الموعد النهائي للنشاط التالي"
+
+#. module: inom_material_purchase_requisition
+#: model:ir.model.fields,field_description:inom_material_purchase_requisition.field_material_requisition__activity_summary
+msgid "Next Activity Summary"
+msgstr "ملخص النشاط التالي"
+
+#. module: inom_material_purchase_requisition
+#: model:ir.model.fields,field_description:inom_material_purchase_requisition.field_material_requisition__activity_type_id
+msgid "Next Activity Type"
+msgstr "نوع النشاط التالي"
+
+#. module: inom_material_purchase_requisition
+#: model:ir.model.fields,field_description:inom_material_purchase_requisition.field_material_requisition__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: inom_material_purchase_requisition
+#: model:ir.model.fields,field_description:inom_material_purchase_requisition.field_material_requisition__message_has_error_counter
+msgid "Number of errors"
+msgstr "عدد الأخطاء"
+
+#. module: inom_material_purchase_requisition
+#: model:ir.model.fields,help:inom_material_purchase_requisition.field_material_requisition__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "عدد الرسائل التي تتطلب إجراءً"
+
+#. module: inom_material_purchase_requisition
+#: model:ir.model.fields,help:inom_material_purchase_requisition.field_material_requisition__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل ذات خطأ التسليم"
+
+#. module: inom_material_purchase_requisition
+#: model_terms:ir.ui.view,arch_db:inom_material_purchase_requisition.view_material_requisition_form
+msgid "Other Information"
+msgstr "معلومات أخرى"
+
+#. module: inom_material_purchase_requisition
+#: model:ir.model.fields,field_description:inom_material_purchase_requisition.field_material_requisition__picking_count
+msgid "Picking Count"
+msgstr "عدد عمليات الصرف"
+
+#. module: inom_material_purchase_requisition
+#: model_terms:ir.ui.view,arch_db:inom_material_purchase_requisition.view_material_requisition_form
+msgid "Picking Details"
+msgstr "تفاصيل الصرف"
+
+#. module: inom_material_purchase_requisition
+#: model:ir.model.fields,field_description:inom_material_purchase_requisition.field_material_requisition__picking_type_id
+msgid "Picking Type"
+msgstr "نوع الصرف"
+
+#. module: inom_material_purchase_requisition
+#: model_terms:ir.ui.view,arch_db:inom_material_purchase_requisition.view_material_requisition_form
+msgid "Print"
+msgstr "طباعة"
+
+#. module: inom_material_purchase_requisition
+#: model_terms:ir.ui.view,arch_db:inom_material_purchase_requisition.view_material_requisition_form
+msgid "Process"
+msgstr "معالجة"
+
+#. module: inom_material_purchase_requisition
+#: model:ir.model.fields.selection,name:inom_material_purchase_requisition.selection__material_requisition__state__done
+#: model_terms:ir.ui.view,arch_db:inom_material_purchase_requisition.view_material_requisition_search
+msgid "Processed"
+msgstr "تمت المعالجة"
+
+#. module: inom_material_purchase_requisition
+#: model:ir.model.fields,field_description:inom_material_purchase_requisition.field_material_requisition_line__product_id
+#: model_terms:ir.ui.view,arch_db:inom_material_purchase_requisition.report_material_requisition_document
+msgid "Product"
+msgstr "المنتج"
+
+#. module: inom_material_purchase_requisition
+#: model:ir.model,name:inom_material_purchase_requisition.model_purchase_order
+#: model:ir.model.fields.selection,name:inom_material_purchase_requisition.selection__material_requisition_line__requisition_action__purchase_order
+#: model_terms:ir.ui.view,arch_db:inom_material_purchase_requisition.view_material_requisition_form
+msgid "Purchase Order"
+msgstr "أمر شراء"
+
+#. module: inom_material_purchase_requisition
+#: model:ir.model.fields,field_description:inom_material_purchase_requisition.field_material_requisition__purchase_count
+msgid "Purchase Order Count"
+msgstr "عدد أوامر الشراء"
+
+#. module: inom_material_purchase_requisition
+#: model:ir.model.fields,help:inom_material_purchase_requisition.field_material_requisition_line__requisition_action
+msgid ""
+"Purchase Order: buy the product from a vendor.\n"
+"Internal Picking: transfer the product from internal stock."
+msgstr ""
+"أمر شراء: شراء المنتج من مورد.\n"
+"صرف داخلي: نقل المنتج من المخزون الداخلي."
+
+#. module: inom_material_purchase_requisition
+#: model:ir.model.fields,field_description:inom_material_purchase_requisition.field_material_requisition__purchase_order_ids
+msgid "Purchase Orders"
+msgstr "أوامر الشراء"
+
+#. module: inom_material_purchase_requisition
+#: model_terms:ir.ui.view,arch_db:inom_material_purchase_requisition.view_employee_form_requisition
+msgid "Purchase Requisition Settings"
+msgstr "إعدادات طلبات الشراء"
+
+#. module: inom_material_purchase_requisition
+#: model:ir.model.fields,field_description:inom_material_purchase_requisition.field_material_requisition_line__product_uom_qty
+#: model_terms:ir.ui.view,arch_db:inom_material_purchase_requisition.report_material_requisition_document
+msgid "Quantity"
+msgstr "الكمية"
+
+#. module: inom_material_purchase_requisition
+#: model:ir.model.fields,field_description:inom_material_purchase_requisition.field_material_requisition__rating_ids
+msgid "Ratings"
+msgstr "التقييمات"
+
+#. module: inom_material_purchase_requisition
+#: model:ir.model.fields,field_description:inom_material_purchase_requisition.field_material_requisition_reject_wizard__rejection_reason
+#: model_terms:ir.ui.view,arch_db:inom_material_purchase_requisition.view_material_requisition_reject_wizard
+msgid "Reason For Rejection"
+msgstr "سبب الرفض"
+
+#. module: inom_material_purchase_requisition
+#: model:ir.model.fields.selection,name:inom_material_purchase_requisition.selection__material_requisition__state__received
+#: model_terms:ir.ui.view,arch_db:inom_material_purchase_requisition.view_material_requisition_search
+msgid "Received"
+msgstr "تم الاستلام"
+
+#. module: inom_material_purchase_requisition
+#: model:ir.model.fields,field_description:inom_material_purchase_requisition.field_material_requisition__received_date
+msgid "Received Date"
+msgstr "تاريخ الاستلام"
+
+#. module: inom_material_purchase_requisition
+#: model_terms:ir.ui.view,arch_db:inom_material_purchase_requisition.view_material_requisition_form
+#: model_terms:ir.ui.view,arch_db:inom_material_purchase_requisition.view_material_requisition_reject_wizard
+msgid "Reject"
+msgstr "رفض"
+
+#. module: inom_material_purchase_requisition
+#: model:ir.model.fields,field_description:inom_material_purchase_requisition.field_material_requisition_reject_wizard__reject_type
+msgid "Reject Type"
+msgstr "نوع الرفض"
+
+#. module: inom_material_purchase_requisition
+#: model:ir.model.fields.selection,name:inom_material_purchase_requisition.selection__material_requisition__state__rejected
+#: model_terms:ir.ui.view,arch_db:inom_material_purchase_requisition.view_material_requisition_search
+msgid "Rejected"
+msgstr "مرفوض"
+
+#. module: inom_material_purchase_requisition
+#: model:ir.model.fields,field_description:inom_material_purchase_requisition.field_material_requisition__rejection_reason
+msgid "Rejection Reason"
+msgstr "سبب الرفض"
+
+#. module: inom_material_purchase_requisition
+#: model:ir.model,name:inom_material_purchase_requisition.model_material_requisition_reject_wizard
+msgid "Rejection Reason Wizard"
+msgstr "معالج سبب الرفض"
+
+#. module: inom_material_purchase_requisition
+#: model_terms:ir.ui.view,arch_db:inom_material_purchase_requisition.view_material_requisition_form
+msgid "Request Info"
+msgstr "معلومات الطلب"
+
+#. module: inom_material_purchase_requisition
+#: model_terms:ir.ui.view,arch_db:inom_material_purchase_requisition.view_material_requisition_form
+msgid "Request for Approval"
+msgstr "طلب الموافقة"
+
+#. module: inom_material_purchase_requisition
+#: model:ir.model.fields,field_description:inom_material_purchase_requisition.field_material_requisition_line__requisition_id
+#: model:ir.model.fields,field_description:inom_material_purchase_requisition.field_material_requisition_reject_wizard__requisition_id
+msgid "Requisition"
+msgstr "الطلب"
+
+#. module: inom_material_purchase_requisition
+#: model:ir.model.fields,field_description:inom_material_purchase_requisition.field_material_requisition_line__requisition_action
+msgid "Requisition Action"
+msgstr "إجراء الطلب"
+
+#. module: inom_material_purchase_requisition
+#: model:ir.model.fields,field_description:inom_material_purchase_requisition.field_material_requisition__request_date
+msgid "Requisition Date"
+msgstr "تاريخ الطلب"
+
+#. module: inom_material_purchase_requisition
+#: model:ir.model.fields,field_description:inom_material_purchase_requisition.field_material_requisition__requisition_deadline
+msgid "Requisition Deadline"
+msgstr "الموعد النهائي للطلب"
+
+#. module: inom_material_purchase_requisition
+#: model:ir.model.fields,field_description:inom_material_purchase_requisition.field_material_requisition__requisition_line_ids
+#: model_terms:ir.ui.view,arch_db:inom_material_purchase_requisition.view_material_requisition_form
+msgid "Requisition Lines"
+msgstr "بنود الطلب"
+
+#. module: inom_material_purchase_requisition
+#: model:ir.model.fields,field_description:inom_material_purchase_requisition.field_material_requisition__name
+#: model_terms:ir.ui.view,arch_db:inom_material_purchase_requisition.view_material_requisition_search
+msgid "Requisition No."
+msgstr "رقم الطلب"
+
+#. module: inom_material_purchase_requisition
+#: model:ir.model.fields,field_description:inom_material_purchase_requisition.field_material_requisition__requisition_responsible_id
+msgid "Requisition Responsible"
+msgstr "مسؤول الطلب"
+
+#. module: inom_material_purchase_requisition
+#: model:ir.ui.menu,name:inom_material_purchase_requisition.menu_material_requisition_list
+msgid "Requisitions"
+msgstr "الطلبات"
+
+#. module: inom_material_purchase_requisition
+#: model_terms:ir.ui.view,arch_db:inom_material_purchase_requisition.view_material_requisition_form
+msgid "Reset to Draft"
+msgstr "إعادة تعيين إلى مسودة"
+
+#. module: inom_material_purchase_requisition
+#: model:ir.model.fields,field_description:inom_material_purchase_requisition.field_material_requisition__activity_user_id
+msgid "Responsible User"
+msgstr "المستخدم المسؤول"
+
+#. module: inom_material_purchase_requisition
+#: model:ir.model.fields,field_description:inom_material_purchase_requisition.field_material_requisition__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "خطأ في تسليم الرسائل القصيرة"
+
+#. module: inom_material_purchase_requisition
+#: model_terms:ir.ui.view,arch_db:inom_material_purchase_requisition.view_material_requisition_search
+msgid "Search Requisitions"
+msgstr "بحث في الطلبات"
+
+#. module: inom_material_purchase_requisition
+#: model_terms:ir.ui.view,arch_db:inom_material_purchase_requisition.view_material_requisition_form
+msgid "Source"
+msgstr "المصدر"
+
+#. module: inom_material_purchase_requisition
+#: model:ir.model.fields,field_description:inom_material_purchase_requisition.field_material_requisition__source_location_id
+msgid "Source Location"
+msgstr "موقع المصدر"
+
+#. module: inom_material_purchase_requisition
+#: model:ir.model.fields,field_description:inom_material_purchase_requisition.field_material_requisition__state
+#: model_terms:ir.ui.view,arch_db:inom_material_purchase_requisition.view_material_requisition_search
+msgid "Status"
+msgstr "الحالة"
+
+#. module: inom_material_purchase_requisition
+#: model:ir.model.fields,help:inom_material_purchase_requisition.field_material_requisition__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"الحالة بناءً على الأنشطة\n"
+"متأخر: تجاوز تاريخ الاستحقاق\n"
+"اليوم: تاريخ النشاط هو اليوم\n"
+"مخطط: أنشطة مستقبلية."
+
+#. module: inom_material_purchase_requisition
+#: model_terms:ir.ui.view,arch_db:inom_material_purchase_requisition.view_material_requisition_form
+msgid ""
+"This will reset the requisition to Draft and restart the entire process. "
+"Continue?"
+msgstr ""
+"سيؤدي هذا إلى إعادة تعيين الطلب إلى مسودة وإعادة بدء العملية بالكامل. هل تريد المتابعة؟"
+
+#. module: inom_material_purchase_requisition
+#: model:ir.model,name:inom_material_purchase_requisition.model_stock_picking
+msgid "Transfer"
+msgstr "تحويل"
+
+#. module: inom_material_purchase_requisition
+#: model:ir.model.fields,help:inom_material_purchase_requisition.field_material_requisition__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "نوع نشاط الاستثناء المسجل."
+
+#. module: inom_material_purchase_requisition
+#: model:ir.model.fields,field_description:inom_material_purchase_requisition.field_material_requisition_line__product_uom_id
+#: model_terms:ir.ui.view,arch_db:inom_material_purchase_requisition.report_material_requisition_document
+msgid "Unit of Measure"
+msgstr "وحدة القياس"
+
+#. module: inom_material_purchase_requisition
+#: model:ir.model.fields.selection,name:inom_material_purchase_requisition.selection__material_requisition_reject_wizard__reject_type__user
+msgid "User"
+msgstr "المستخدم"
+
+#. module: inom_material_purchase_requisition
+#: model:ir.model.fields,field_description:inom_material_purchase_requisition.field_material_requisition_line__vendor_id
+#: model_terms:ir.ui.view,arch_db:inom_material_purchase_requisition.report_material_requisition_document
+msgid "Vendor"
+msgstr "المورد"
+
+#. module: inom_material_purchase_requisition
+#: model:ir.model.fields.selection,name:inom_material_purchase_requisition.selection__material_requisition__state__confirm
+#: model_terms:ir.ui.view,arch_db:inom_material_purchase_requisition.view_material_requisition_search
+msgid "Waiting Department Approval"
+msgstr "انتظار موافقة القسم"
+
+#. module: inom_material_purchase_requisition
+#: model:ir.model.fields.selection,name:inom_material_purchase_requisition.selection__material_requisition__state__manager_approved
+msgid "Waiting Manager  Approval"
+msgstr "انتظار موافقة المدير"
+
+#. module: inom_material_purchase_requisition
+#: model_terms:ir.ui.view,arch_db:inom_material_purchase_requisition.view_material_requisition_search
+msgid "Waiting User Approval"
+msgstr "انتظار موافقة المستخدم"
+
+#. module: inom_material_purchase_requisition
+#: model:ir.model.fields,field_description:inom_material_purchase_requisition.field_material_requisition__website_message_ids
+msgid "Website Messages"
+msgstr "رسائل الموقع الإلكتروني"
+
+#. module: inom_material_purchase_requisition
+#: model:ir.model.fields,help:inom_material_purchase_requisition.field_material_requisition__website_message_ids
+msgid "Website communication history"
+msgstr "سجل اتصالات الموقع الإلكتروني"
