@@ -93,7 +93,7 @@ class MaterialRequisition(models.Model):
         compute='_compute_dest_location_id',
         store=True,
         readonly=False,
-        compute_sudo=True,  # <--- الحل الجذري: تشغيل الحساب بصلاحيات Admin
+        compute_sudo=True,
         domain="[('usage', 'in', ('internal', 'customer'))]",
     )
 
@@ -108,19 +108,23 @@ class MaterialRequisition(models.Model):
     # ------------------------------------------------------------------
     # Computes
     # ------------------------------------------------------------------
-    @api.depends('employee_id')
+    @api.depends(
+        'employee_id',
+        'employee_id.department_id',
+    )
     def _compute_dest_location_id(self):
-        """Destination location priority: employee location, then department."""
         for requisition in self:
+            employee = requisition.employee_id.sudo()
             location = False
-            # استخدام sudo() للوصول الآمن لبيانات HR
-            if requisition.employee_id:
-                emp = requisition.employee_id.sudo()
-                if emp.requisition_stock_location_id:
-                    location = emp.requisition_stock_location_id
-                elif emp.department_id and emp.department_id.requisition_stock_location_id:
-                    location = emp.department_id.requisition_stock_location_id
-            
+
+            if employee:
+                location = employee.requisition_stock_location_id
+
+                if not location and employee.department_id:
+                    location = (
+                        employee.department_id.requisition_stock_location_id
+                    )
+
             requisition.dest_location_id = location
 
     @api.depends('state')
