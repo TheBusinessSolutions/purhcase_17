@@ -43,7 +43,7 @@ and requisition user approval, internal picking or purchase order fulfillment.
         'report/requisition_report_template.xml',
         'views/rejection_wizard_views.xml',
         'views/material_requisition_views.xml',
-        'views/hr_employee_views.xml',
+        # 'views/hr_employee_views.xml',
         'views/hr_department_views.xml',
         'views/menu_views.xml',
     ],
