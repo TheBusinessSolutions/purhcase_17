@@ -119,10 +119,10 @@ class MaterialRequisition(models.Model):
     dest_location_id = fields.Many2one(
         'stock.location',
         string='Destination Location',
-        compute='_compute_dest_location_id',
-        store=True,
-        readonly=False,
-        compute_sudo=True,
+        # compute='_compute_dest_location_id',
+        # store=True,
+        # readonly=False,
+        # compute_sudo=True,
         domain="[('usage', 'in', ('internal', 'customer'))]",
     )
 
@@ -158,18 +158,18 @@ class MaterialRequisition(models.Model):
     # ------------------------------------------------------------------
     # Computed fields
     # ------------------------------------------------------------------
-    @api.depends('department_id', 'department_id.requisition_stock_location_id')
-    def _compute_dest_location_id(self):
-        """Use the department default without reading the employee's
-        custom location field. Leave the destination empty if not configured.
-        """
-        for requisition in self:
-            department = requisition.department_id.sudo()
-            requisition.dest_location_id = (
-                department.requisition_stock_location_id
-                if department
-                else False
-            )
+    # @api.depends('department_id', 'department_id.requisition_stock_location_id')
+    # def _compute_dest_location_id(self):
+    #     """Use the department default without reading the employee's
+    #     custom location field. Leave the destination empty if not configured.
+    #     """
+    #     for requisition in self:
+    #         department = requisition.department_id.sudo()
+    #         requisition.dest_location_id = (
+    #             department.requisition_stock_location_id
+    #             if department
+    #             else False
+    #         )
 
     @api.depends('state')
     def _compute_picking_count(self):
