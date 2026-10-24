@@ -84,12 +84,14 @@
                     <div class="oe_button_box" name="button_box">
                         <button name="action_view_pickings" type="object"
                                 class="oe_stat_button" icon="fa-truck"
+                                groups="stock.group_stock_user"
                                 invisible="picking_count == 0">
                             <field name="picking_count" widget="statinfo"
                                    string="Internal Picking"/>
                         </button>
                         <button name="action_view_purchase_orders" type="object"
                                 class="oe_stat_button" icon="fa-shopping-cart"
+                                groups="purchase.group_purchase_user"
                                 invisible="purchase_count == 0">
                             <field name="purchase_count" widget="statinfo"
                                    string="Purchase Order"/>

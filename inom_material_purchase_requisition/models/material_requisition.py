@@ -454,7 +454,8 @@ class MaterialRequisition(models.Model):
     # ------------------------------------------------------------------
     def action_view_pickings(self):
         self.ensure_one()
-
+        self.env['stock.picking'].check_access_rights('read')
+        
         action = self.env['ir.actions.actions']._for_xml_id(
             'stock.action_picking_tree_all'
         )
@@ -472,6 +473,7 @@ class MaterialRequisition(models.Model):
 
     def action_view_purchase_orders(self):
         self.ensure_one()
+        self.env['purchase.order'].check_access_rights('read')
 
         action = self.env['ir.actions.actions']._for_xml_id(
             'purchase.purchase_form_action'
