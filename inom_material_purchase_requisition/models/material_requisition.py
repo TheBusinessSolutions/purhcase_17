@@ -9,6 +9,19 @@ class MaterialRequisition(models.Model):
     _description = 'Material Purchase Requisition'
     _order = 'request_date desc, id desc'
 
+    # 1. material_requisition.py: add two stored fields
+
+    # The rules use stored fields on purpose. 
+    # A domain like employee_id.user_id makes Odoo read 
+    # hr.employee as the user, which brings back your original public-profile error.
+    employee_user_id = fields.Many2one(
+        'res.users', related='employee_id.user_id',
+        store=True, readonly=True,
+    )
+    department_manager_user_id = fields.Many2one(
+        'res.users', related='department_id.manager_id.user_id',
+        store=True, readonly=True,
+    )
     # ------------------------------------------------------------------
     # Header fields
     # ------------------------------------------------------------------
